@@ -4,14 +4,14 @@ FROM ruby:3.3.4 AS builder
 ARG WORKDIR=/app
 ENV WORKDIR=$WORKDIR
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-
 WORKDIR $WORKDIR
 
+# 依存関係のインストールを先に行い、キャッシュを活用
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set --local without 'development test' \
     && bundle install --jobs 4 --retry 3
 
+# その後、アプリケーションコードをコピー
 COPY . .
 
 # 本番用アセットのプリコンパイル
