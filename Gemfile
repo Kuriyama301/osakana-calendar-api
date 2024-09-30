@@ -6,6 +6,7 @@ ruby "3.3.4"
 gem 'base64'
 gem 'bigdecimal'
 gem 'mutex_m'
+gem "rack-cors"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8", ">= 7.0.8.4"
