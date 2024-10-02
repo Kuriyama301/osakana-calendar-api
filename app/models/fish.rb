@@ -7,6 +7,6 @@ class Fish < ApplicationRecord
   validates :nutrition, presence: true
   validates :origin, presence: true
 
-  # 画像の存在を確認
-  validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
+  # validates :image, attached: true,
+  #           content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/svg+xml']
 end
