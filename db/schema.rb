@@ -43,20 +43,22 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_30_063752) do
   end
 
   create_table "fish", force: :cascade do |t|
-    t.string "name"
-    t.text "features"
-    t.text "nutrition"
-    t.string "origin"
+    t.string "name", null: false
+    t.text "features", null: false
+    t.text "nutrition", null: false
+    t.string "origin", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_fish_on_name", unique: true
   end
 
   create_table "fish_seasons", force: :cascade do |t|
     t.bigint "fish_id", null: false
-    t.date "start_date"
-    t.date "end_date"
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fish_id", "start_date", "end_date"], name: "index_fish_seasons_on_fish_id_and_start_date_and_end_date"
     t.index ["fish_id"], name: "index_fish_seasons_on_fish_id"
   end
 
