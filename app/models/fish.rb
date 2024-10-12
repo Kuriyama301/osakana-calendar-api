@@ -1,5 +1,5 @@
 class Fish < ApplicationRecord
-  has_many :fish_seasons
+  has_many :fish_seasons, dependent: :destroy
   has_one_attached :image
 
   validates :name, presence: true, uniqueness: true
