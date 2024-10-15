@@ -63,5 +63,21 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.active_storage.service = :local
+  config.hosts << "api"
+  config.hosts << "localhost"
+  config.hosts << "0.0.0.0"
+  config.action_controller.default_url_options = { host: ENV['API_URL'] || 'http://localhost:3000' }
+
+  Rails.application.routes.default_url_options[:host] = ENV['API_URL'] || 'http://localhost:3000'
+
+  # 新しい設定をここに追加
+  config.active_storage.resolve_model_to_route = :rails_storage_proxy
+
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+    'Access-Control-Request-Method' => '*',
+    'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  }
+
 end
