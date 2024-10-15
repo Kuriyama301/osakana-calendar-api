@@ -10,8 +10,10 @@
         {
           "id": 1,
           "fish_id": 1,
-          "start_date": "2024-12-01",
-          "end_date": "2025-02-28"
+          "start_month": 12,
+          "start_day": 1,
+          "end_month": 2,
+          "end_day": 28
         }
       ],
       "active_storage_attachments": [
@@ -35,8 +37,10 @@
         {
           "id": 2,
           "fish_id": 2,
-          "start_date": "2025-05-01",
-          "end_date": "2025-08-31"
+          "start_month": 5,
+          "start_day": 1,
+          "end_month": 8,
+          "end_day": 31
         }
       ],
       "active_storage_attachments": [
@@ -60,8 +64,10 @@
         {
           "id": 3,
           "fish_id": 3,
-          "start_date": "2024-10-01",
-          "end_date": "2025-02-28"
+          "start_month": 10,
+          "start_day": 1,
+          "end_month": 2,
+          "end_day": 28
         }
       ],
       "active_storage_attachments": [
@@ -85,8 +91,10 @@
         {
           "id": 4,
           "fish_id": 4,
-          "start_date": "2024-06-01",
-          "end_date": "2024-08-31"
+          "start_month": 6,
+          "start_day": 1,
+          "end_month": 8,
+          "end_day": 31
         }
       ],
       "active_storage_attachments": [
@@ -110,8 +118,10 @@
         {
           "id": 5,
           "fish_id": 5,
-          "start_date": "2024-03-01",
-          "end_date": "2024-12-31"
+          "start_month": 3,
+          "start_day": 1,
+          "end_month": 12,
+          "end_day": 31
         }
       ],
       "active_storage_attachments": [

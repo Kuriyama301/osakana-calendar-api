@@ -21,8 +21,10 @@ def process_fish_data(data)
     fish_data['fish_seasons'].each do |season_data|
       FishSeason.find_or_create_by!(
         fish: fish,
-        start_date: Date.parse(season_data['start_date']),
-        end_date: Date.parse(season_data['end_date'])
+        start_month: season_data['start_month'],
+        start_day: season_data['start_day'],
+        end_month: season_data['end_month'],
+        end_day: season_data['end_day']
       )
     end
 
