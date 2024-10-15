@@ -25,4 +25,7 @@ COPY . .
 # キャッシュディレクトリを作成
 RUN mkdir -p tmp/cache tmp/bootsnap
 
+# binディレクトリにPATHを通す
+ENV PATH="$WORKDIR/bin:$PATH"
+
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
