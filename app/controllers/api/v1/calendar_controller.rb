@@ -18,7 +18,7 @@ class Api::V1::CalendarController < ApplicationController
     if @fish.empty?
       render json: { message: "No fish found for the specified date." }, status: :not_found
     else
-      render json: @fish, include: :fish_seasons
+      render json: @fish.as_json(include: :fish_seasons, methods: :image_url)
     end
   rescue ArgumentError
     render json: { error: "Invalid date format. Please use YYYY-MM-DD." }, status: :bad_request

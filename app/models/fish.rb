@@ -27,9 +27,7 @@ class Fish < ApplicationRecord
   end
 
   def image_url
-    if image.attached?
-      Rails.application.routes.url_helpers.rails_blob_url(image, only_path: true)
-    end
+    Rails.application.routes.url_helpers.rails_blob_url(image, only_path: true) if image.attached?
   end
 
   def season_info
