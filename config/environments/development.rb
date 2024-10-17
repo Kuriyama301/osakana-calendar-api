@@ -72,6 +72,7 @@ Rails.application.configure do
 
   # 新しい設定をここに追加
   config.active_storage.resolve_model_to_route = :rails_storage_proxy
+  config.active_storage.logger = ActiveSupport::Logger.new(STDOUT)
 
   config.action_dispatch.default_headers = {
     'Access-Control-Allow-Origin' => '*',
