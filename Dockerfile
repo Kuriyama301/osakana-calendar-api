@@ -18,7 +18,7 @@ RUN bundle config set --local without 'development test' \
 COPY . .
 
 # 本番用アセットのプリコンパイル
-RUN bundle exec rails assets:precompile RAILS_ENV=production
+# RUN bundle exec rails assets:precompile RAILS_ENV=production
 
 # 実行ステージ
 FROM ruby:3.3.4-slim
